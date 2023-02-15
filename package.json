@@ -1,0 +1,24 @@
+{
+  "name": "sc-bot-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Simon Fontaine",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.2.3",
+    "captcha-canvas": "^3.2.1",
+    "customizable-discordjs-pagination": "^2.0.1",
+    "dayjs": "^1.11.7",
+    "deepl-node": "^1.7.4",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "openai": "^3.1.0",
+    "wokcommands": "^2.1.0"
+  }
+}
