@@ -40,33 +40,28 @@ module.exports = async (instance, client) => {
     );
 
   const rows = new ActionRowBuilder().addComponents(
-    new StringSelectMenuBuilder()
-      .setMinValues(0)
-      .setMaxValues(1)
-      .setCustomId("ticket_joueur_select")
-      .setPlaceholder("Rien de sélectionné")
-      .addOptions(
-        {
-          label: "🔐 Problème Mot De Passe",
-          description: "Perdu votre mot de passe ? C'est ici !",
-          value: "probleme_motdepasse",
-        },
-        {
-          label: "🌄 Problème En Jeu",
-          description: "Problème(s) sur notre serveur Minecraft ? C'est ici !",
-          value: "probleme_en_jeu",
-        },
-        {
-          label: "🖥️ Problème Site Web",
-          description: "Problème(s) sur note site web ? C'est ici !",
-          value: "probleme_boutique",
-        },
-        {
-          label: "🎙️ Problème Discord",
-          description: "Problème(s) sur notre serveur Discord ? C'est ici !",
-          value: "probleme_discord",
-        }
-      )
+    new StringSelectMenuBuilder().setMinValues(0).setMaxValues(1).setCustomId("ticket_joueur_select").setPlaceholder("Rien de sélectionné").addOptions(
+      {
+        label: "🔐 Problème Mot De Passe",
+        description: "Perdu votre mot de passe ? C'est ici !",
+        value: "probleme_motdepasse",
+      },
+      {
+        label: "🌄 Problème En Jeu",
+        description: "Problème(s) sur notre serveur Minecraft ? C'est ici !",
+        value: "probleme_en_jeu",
+      },
+      {
+        label: "🖥️ Problème Site Web",
+        description: "Problème(s) sur note site web ? C'est ici !",
+        value: "probleme_boutique",
+      },
+      {
+        label: "🎙️ Problème Discord",
+        description: "Problème(s) sur notre serveur Discord ? C'est ici !",
+        value: "probleme_discord",
+      }
+    )
   );
 
   if (results) {
@@ -118,9 +113,7 @@ module.exports = async (instance, client) => {
 
     const interactionValue = interaction.values[0];
 
-    if (
-      !["probleme_en_jeu", "probleme_boutique", "probleme_discord", "probleme_motdepasse"].includes(interactionValue)
-    ) {
+    if (!["probleme_en_jeu", "probleme_boutique", "probleme_discord", "probleme_motdepasse"].includes(interactionValue)) {
       return interaction.reply({
         content: `**${interaction.user.tag}** votre choix d'option a été remis à zéro !`,
         ephemeral: true,
@@ -288,6 +281,10 @@ module.exports = async (instance, client) => {
                 allow: [PermissionFlagsBits.ViewChannel],
               },
               {
+                id: IDs.RESP_ROLE,
+                allow: [PermissionFlagsBits.ViewChannel],
+              },
+              {
                 id: IDs.GUIDE_ROLE,
                 allow: [PermissionFlagsBits.ViewChannel],
               },
@@ -318,10 +315,7 @@ module.exports = async (instance, client) => {
               { creating_ticket: false }
             );
 
-            let descriptionString = [
-              `:bust_in_silhouette: **${interaction.user.tag}** [${interaction.user.id}]`,
-              `${emojis.triangleRight} Type: **${ticketValue}**`,
-            ];
+            let descriptionString = [`:bust_in_silhouette: **${interaction.user.tag}** [${interaction.user.id}]`, `${emojis.triangleRight} Type: **${ticketValue}**`];
             if (identifiant) {
               descriptionString.push(`${emojis.triangleRight} Identifiant: **${identifiant}**`);
             }
@@ -338,18 +332,10 @@ module.exports = async (instance, client) => {
               .setFooter({ text: "Un membre du staff a été averti de la création de ce ticket." });
 
             const rows = new ActionRowBuilder()
-              .addComponents(
-                new ButtonBuilder()
-                  .setCustomId("close")
-                  .setLabel("Sauvegarder & Fermer")
-                  .setEmoji("💾")
-                  .setStyle(ButtonStyle.Primary)
-              )
+              .addComponents(new ButtonBuilder().setCustomId("close").setLabel("Sauvegarder & Fermer").setEmoji("💾").setStyle(ButtonStyle.Primary))
               .addComponents(new ButtonBuilder().setCustomId("lock").setEmoji("🔒").setStyle(ButtonStyle.Danger))
               .addComponents(new ButtonBuilder().setCustomId("unlock").setEmoji("🔓").setStyle(ButtonStyle.Success))
-              .addComponents(
-                new ButtonBuilder().setCustomId("claim").setLabel("Claim").setEmoji("🙋‍♂️").setStyle(ButtonStyle.Primary)
-              );
+              .addComponents(new ButtonBuilder().setCustomId("claim").setLabel("Claim").setEmoji("🙋‍♂️").setStyle(ButtonStyle.Primary));
 
             await channel
               .send({
