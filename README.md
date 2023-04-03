@@ -13,9 +13,9 @@
 
 [![license - MIT](https://img.shields.io/badge/license-MIT-green?logo=github&logoColor=white)](https://choosealicense.com/licenses/mit/)
 
-[![langage - javascript](https://img.shields.io/badge/langage-javascript-yellow?logo=javascript)](https://www.javascript.com/)
+[![langage - javascript](https://img.shields.io/badge/langage-javascript-yellow?logo=javascript&logoColor=white)](https://www.javascript.com/)
 
-[![dependency - discord.js](https://img.shields.io/badge/dependency-discord.js-blue?logo=discord)](https://www.javascript.com/)
+[![dependency - discord.js](https://img.shields.io/badge/dependency-discord.js-blue?logo=discord&logoColor=white)](https://discord.js.org/)
 
 ## Table Of Contents
 
