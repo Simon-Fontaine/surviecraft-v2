@@ -11,9 +11,16 @@
    </p>
 </p>
 
+[![license - MIT](https://img.shields.io/badge/license-MIT-green?logo=github&logoColor=white)](https://choosealicense.com/licenses/mit/)
+
+[![langage - javascript](https://img.shields.io/badge/langage-javascript-yellow?logo=javascript)](https://www.javascript.com/)
+
+[![dependency - discord.js](https://img.shields.io/badge/dependency-discord.js-blue?logo=discord)](https://www.javascript.com/)
+
 ## Table Of Contents
 
 - [Installation](#installation)
+- [Starting App](#starting-app)
 - [Authors](#authors)
 - [License](#license)
 
@@ -22,8 +29,26 @@
 ```bash
   git clone https://github.com/Simon-Fontaine/surviecraft-v2.git
   cd codecracker
-  
+
   npm i
+```
+
+Créez un fichier nommé `.env` dans la racine du dossier surviecraft-v2 avec les informations ci-dessous, n'oubliez pas de mettre les bonnes valeurs
+
+```bash
+TOKEN=yourToken
+MONGO_URI=yourLink
+PORT=27015
+OPENAI_API_KEY=yourApiKey
+DEEPL_API_KEY=yourApiKey
+```
+
+## Starting App
+
+Pour démarrer l'application, exécutez la commande suivante dans sons dossier
+
+```bash
+  node index.js
 ```
 
 ## Authors
