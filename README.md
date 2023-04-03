@@ -21,6 +21,7 @@
 
 - [Installation](#installation)
 - [Starting App](#starting-app)
+- [Documentation](#documentation)
 - [Authors](#authors)
 - [License](#license)
 
@@ -50,6 +51,10 @@ Pour démarrer l'application, exécutez la commande suivante dans sons dossier
 ```bash
   node index.js
 ```
+
+## Documentation
+
+Une documentation complète du bot discord peut être trouvée [juste ici](https://scbots.gitbook.io/surviecraft/)
 
 ## Authors
 
