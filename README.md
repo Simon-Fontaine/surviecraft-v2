@@ -31,8 +31,9 @@
   apt update -y && curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && apt install -y nodejs git
 
   git clone https://github.com/Simon-Fontaine/surviecraft-v2.git
-  cd codecracker
-
+  npm install pm2 -g
+  
+  cd surviecraft-v2
   npm i
 ```
 
